@@ -1,0 +1,10 @@
+--- Email.pm.orig	2008-10-28 13:58:18.979900000 -0400
++++ Email.pm	2008-10-28 13:58:29.726978000 -0400
+@@ -1229,6 +1229,7 @@
+     }
+ 
+     $args{'ticket'} ||= ParseTicketId( $Subject );
++    $args{'ticket'} ||= ParseReferences( $head );
+ 
+     $SystemTicket = RT::Ticket->new( $RT::SystemUser );
+     $SystemTicket->Load( $args{'ticket'} ) if ( $args{'ticket'} ) ;
