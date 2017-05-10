@@ -1,10 +1,10 @@
---- Email.pm.orig	2008-10-28 13:58:18.979900000 -0400
-+++ Email.pm	2008-10-28 13:58:29.726978000 -0400
-@@ -1229,6 +1229,7 @@
-     }
- 
-     $args{'ticket'} ||= ParseTicketId( $Subject );
+--- a/Email.pm	2017-05-10 15:30:07.018184877 +0200
++++ b/Email.pm	2017-05-10 15:31:01.912437367 +0200
+@@ -213,6 +213,7 @@
+     };
+
+     $args{'ticket'} ||= ExtractTicketId( $Message );
 +    $args{'ticket'} ||= ParseReferences( $head );
- 
-     $SystemTicket = RT::Ticket->new( $RT::SystemUser );
+
+     my $SystemTicket = RT::Ticket->new( RT->SystemUser );
      $SystemTicket->Load( $args{'ticket'} ) if ( $args{'ticket'} ) ;

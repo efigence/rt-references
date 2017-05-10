@@ -4,6 +4,8 @@
 
 # {{{ sub ParseReferences
 
+package RT::Interface::Email;
+
 sub ParseReferences {
     my $head = shift;
 

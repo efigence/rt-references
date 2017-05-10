@@ -12,6 +12,8 @@ ticket id.
 
 =cut
 
+package RT::Ticket;
+
 sub LoadByMessageId {
     my $self = shift;
     my $MessageId = shift;
